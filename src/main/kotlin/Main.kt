@@ -76,7 +76,7 @@ open class Calculator(){
 
     }
 }
-
+//테스트 커밋
 class AddOperation(){
     fun operate(num1 : Int, num2: Int):Double = (num1+num2).toDouble() //문법 ..?
 }
