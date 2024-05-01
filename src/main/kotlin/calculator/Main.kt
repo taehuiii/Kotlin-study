@@ -45,15 +45,26 @@ fun main(){
             print(" 연산자 입력하세요 : ")
             operator = readLine().toString()
 
-            when (operator) { //연산자 enum으로 관리하기1
-                Operator.PLUS.Name-> result=calc.operation(AddOperation(), num1, num2)
-                Operator.MINUS.Name -> result=calc.operation(SubstractOperation(), num1, num2)
-                Operator.MULTIPLY.Name-> result=calc.operation(MultiplyOperation(), num1, num2)
-                Operator.DIVIDE.Name-> result=calc.operation(DivideOperation(), num1, num2)
-                Operator.REMAINDER.Name -> result=calc.operation(ReminderOperation(), num1, num2)
-                else-> {throw InvalidInputException("연산자 잘못입력 !!")}
-            }
+//            when (operator) { //연산자 enum으로 관리하기1
+//                Operator.PLUS.Name-> result=calc.operation(AddOperation(), num1, num2)
+//                Operator.MINUS.Name -> result=calc.operation(SubstractOperation(), num1, num2)
+//                Operator.MULTIPLY.Name-> result=calc.operation(MultiplyOperation(), num1, num2)
+//                Operator.DIVIDE.Name-> result=calc.operation(DivideOperation(), num1, num2)
+//                Operator.REMAINDER.Name -> result=calc.operation(ReminderOperation(), num1, num2)
+//                else-> {throw InvalidInputException("연산자 잘못입력 !!")}
+//            }
 
+            when(operator){
+                Operator.PLUS.value-> AddOperation()
+                Operator.MINUS.value -> SubstractOperation()
+                Operator.MULTIPLY.value -> MultiplyOperation()
+                Operator.DIVIDE.value -> DivideOperation()
+                Operator.REMAINDER.value -> ReminderOperation()
+                else-> throw InvalidInputException("연산자 잘못입력 !!")
+            }.let{
+                //Upcasting
+                it.operate(num1,num2)
+            }
         } catch (e: Exception) {
             println(e.message)
             //  e.printStackTrace()

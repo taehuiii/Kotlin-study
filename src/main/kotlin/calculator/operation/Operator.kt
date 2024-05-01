@@ -1,7 +1,7 @@
 package calculator.operation
 
 enum class Operator(
-    val Name : String
+    val value : String
 ){
     PLUS("+"),
     MINUS("-"),
