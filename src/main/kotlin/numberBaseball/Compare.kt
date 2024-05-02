@@ -5,7 +5,7 @@ class Compare {
     fun compare(ans: Int, num: Int):Int { //정답과 입력을 비교해서 힌트 생성
 
         if (ans == num) { //게임종료
-            println("정답!")   //[Todo] 정답맞춰서 종료되었을 경우, 초기 안내문구 다시 출력
+            println("정답!")
             return 1
         }
 

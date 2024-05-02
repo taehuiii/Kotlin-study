@@ -11,7 +11,7 @@ class MakeAnswer {
     fun make(validator:Validate):Int{
 
         while( isOk ==false ) {
-            result ="" //초기화
+            result ="" //초기
 
             for (i: Int in 0..end) {
                 mkRandom = MakeRandom()
@@ -41,12 +41,12 @@ class MakeAnswer {
             }
 
             for (i in 0..2) { //문자열에 이어붙임
-                result += answerArray[i] //[Todo] toString 안하고 붙여도되나?
+                result += answerArray[i]
             }
 
 
                 if (validator.check(result) == true) {
-                    print("정답 : ${result}")
+                   // print(" 정답 : ${result}")
                     isOk=true
 
                 }
