@@ -2,6 +2,22 @@ package numberbaseball_clone
 
 import helper.input
 import kotlin.RuntimeException
+/**
+ *   BaseballGame.play()
+ *    1. tryCount 을 0 으로 초기화한다.
+ *    2. 사용자에게 정답 입력을 받는다.
+ *    3. 사용자에게 입력받은 입력이 올바른지 검증한다.
+ *    4. tryCount 을 1 증가시킨다.
+ *    5. 스트라이크가 몇개인지 계산한다.
+ *    6. 만약 스트라이크가 size 와 동일하다면 정답임으로 게임을 종료한다. (이때 TryCount 반환한다)
+ *    7. 볼이 몇개인지 계산한다.
+ *    8. 힌트를 출력하고 처음으로 돌아간다.
+ *
+ *   // 적당한 추상화가 적용된 설명 -> 읽기 쉬운 코드 만들어짐
+ *   // 캡슐화를 구현할 수 있다 -> 구체적인걸 늦게 결정하기 때문
+ *   // 관심사 분리를 통해서 문제를 작게 만들고, 생각하는 범위자체를 작게 만들수 있다.
+ */
+
 
 //상속할거면 open 키워드 써주기!
 open class BaseballGame(private val size: Int =3) {
